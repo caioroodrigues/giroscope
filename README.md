@@ -112,14 +112,6 @@ Os códigos e identificadores são exclusivamente de demonstração. EANs foram 
 
 Edite `rede/config.py` antes da primeira importação:
 
-| Configuração | Exemplo público | Ajuste necessário |
-| --- | --- | --- |
-| `INF_REDE` | `1001` | Código da sua rede em `INF_COD` |
-| `INF_CONCORRENCIA` | `9001` | Código da concorrência em `INF_COD` |
-| `FILIAIS_ESCOPO` | `[101, 102, 900]` | Filiais que entram inicialmente na análise |
-| `FILIAIS_INATIVAS` | `[]` | Filiais que devem iniciar inativas |
-| `LABORATORIOS_EXCLUIDOS` | `[]` | Categorias/laboratórios que não representam mercadorias |
-| `NOMES_EXIBICAO` | `{}` | Nomes opcionais para exibição de filiais |
 
 As listas iniciais alimentam um banco novo. Em um banco já criado, ajuste parâmetros e cadastros pelas telas; alterar apenas o arquivo não sobrescreve configurações persistidas. Uma filial cujo nome termina em `CD` é inicialmente reconhecida como centro de distribuição; confira o tipo no cadastro.
 
@@ -128,7 +120,6 @@ As listas iniciais alimentam um banco novo. Em um banco já criado, ajuste parâ
 Colunas obrigatórias:
 
 ```text
-COD MERCADORIA;MERCADORIA;EAN;ESTOQUE;LABORATORIO;FILIAL;CNPJ
 ```
 
 `FILIAL` usa o formato `101 - LOJA EXEMPLO`. A identificação entre estoque e vendas depende de `CNPJ`. O importador descarta saldos negativos/zero e registros sem identificação válida, além das exclusões configuradas. Vírgula decimal é aceita; evite separador de milhares na quantidade.
